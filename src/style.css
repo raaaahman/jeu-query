@@ -1,0 +1,10 @@
+.container {
+  display: flex;
+}
+h1, h2, h3, p {
+  margin: 20px 100px;
+  font-family: Mali;
+}
+img {
+  border-radius: 10px;
+}
