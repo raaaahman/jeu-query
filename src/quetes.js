@@ -1,9 +1,14 @@
 class Quest {
-  constructor () {
+  constructor (id) {
+    this.id = id | 1
     this.message = 'Faites apparaître la carte du royaume.'
     this.solution = '$(\'#royaume\').show()'
   }
 
+
+  update() {
+    this.id++
+  }
 }
 
 $(document).ready(function() {
