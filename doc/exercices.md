@@ -3,8 +3,38 @@
 - Renommez la région pour en prendre le contrôle
   - Selection `h1`
   - modification du texte
-- Déblayez les débris:
+- Réparez les tours endommagées
+  - sélection des tours `.tours`
+  - remove class `.detruit`
+- Ajoutez des archers dans les tours
+  - sélection des `.tours`
+  - append `<div class="archers"></div>`
+- Déblayez les débris devant le château
   - `#chateau`
-  - selectionner les éléments enfants
-  - filtrer sur `.debris`
+  - selectionner l'élément suivant
   - `remove`
+- Prolongez le mur Est pour compléter le château
+  - Sélectionner le `.mur`
+  - Filtrer sur le numéro
+  - modifier l'attribut `width`
+- Faites entrer le roi dans le château
+  - Sélectionner le `#pont-levis`
+  - `slideDown`
+  - Sélectionner le `#roi`
+  - Récupérer la `position` du château
+  - `animate`
+- Asséchez le marécage
+  - Sélectionner l'élément `[src=marecage.png]`
+  - Cloner une portion de terrain de plaine
+  - `replace` le marécage avec le nouvel élément
+- Ordonnez les troupes dans l'armée
+  - Sélectionner l'armée en récupérant les `siblings` des archers
+  - `remove` les archers
+  - `insertAfter` les soldats dans l'armée
+- Assiégez le château adverse
+  - Sélectionner l'armée `.soldats:parent`
+  - `detach` de la zone
+  - `append` dans la `.zone` parente du château adverse `.chateau.not(.ami)`
+- Videz les douves du château
+  - sélectionner les `siblings` du château adverse
+  - exécuter `empty`
