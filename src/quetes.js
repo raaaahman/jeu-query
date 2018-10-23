@@ -5,7 +5,6 @@ class Quest {
     this.step = new QuestStep(1)
   }
 
-
   update() {
     this.id++
   }
@@ -14,8 +13,16 @@ class Quest {
 class QuestStep {
   constructor (id) {
     this.id = id
-    this.message = 'Faites apparaître la carte du royaume.'
-    this.solution = '$(\'#royaume\').show()'
+    self = this
+    $.getJSON('assets/quetes/step' + id + '.json', function(data) {
+      self.message = data.message
+      self.solution = data.solution
+    })
+    /*
+    this.id = newStep.id
+    this.message = newStep.message
+    this.solution = newStep.solution
+    */
   }
 }
 
@@ -34,8 +41,8 @@ class QuestLog {
 }
 
 $(document).ready(function() {
-  let questLog = new QuestLog($('.quete'))
-  let currentQuest = new Quest()
+
+  questLog = new QuestLog($('.quete'))
 
   questLog.render()
 });
