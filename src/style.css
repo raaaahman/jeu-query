@@ -5,6 +5,17 @@ h1, h2, h3, p {
   margin: 20px 100px;
   font-family: Mali;
 }
+
+.nom-du-royaume {
+  position: absolute;
+  color: white;
+  top: 75px;
+  left: 100px;
+}
 img {
   border-radius: 10px;
+}
+
+.input-container {
+  padding: 50px 100px;
 }
