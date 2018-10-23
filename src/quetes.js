@@ -19,9 +19,23 @@ class QuestStep {
   }
 }
 
+class QuestLog {
+  /**
+  * @param Takes a JQuery element
+  */
+  constructor (element) {
+    this.element = element
+    this.currentQuest = new Quest(1)
+  }
+
+  render() {
+    this.element.children('p').text(this.currentQuest.step.message)
+  }
+}
+
 $(document).ready(function() {
-  let questLog = $('.quete')
+  let questLog = new QuestLog($('.quete'))
   let currentQuest = new Quest()
 
-  questLog.children('p').text(currentQuest.step.message)
+  questLog.render()
 });
